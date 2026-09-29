@@ -79,6 +79,7 @@ lib/
       repositories/    (vehicle_repository.dart, service_repository.dart, workshop_repository.dart, booking_repository.dart)
     modules/
       home/            (home_binding.dart, home_controller.dart, home_view.dart)
+      main/            (controller, binding, view)
       vehicle_select/  (controller, binding, view)
       service_config/  (controller, binding, view — Core Multi-Vehicle Config)
       schedule/        (controller, binding, view)
