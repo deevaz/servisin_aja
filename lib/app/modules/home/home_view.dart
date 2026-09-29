@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/app/core/utils/dialog_util.dart';
 import 'package:get/get.dart';
+import 'package:servisin_aja/app/core/utils/dialog_util.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_typography.dart';

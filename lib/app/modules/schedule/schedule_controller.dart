@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/app/core/utils/snackbar_util.dart';
 import 'package:get/get.dart';
+import 'package:servisin_aja/app/core/utils/snackbar_util.dart';
 import '../../data/models/workshop.dart';
 import '../../data/models/time_slot.dart';
 import '../../data/models/booking_item.dart';

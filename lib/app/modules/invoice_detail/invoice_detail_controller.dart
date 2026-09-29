@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_application_1/app/core/utils/snackbar_util.dart';
 import 'package:get/get.dart';
+import 'package:servisin_aja/app/core/utils/snackbar_util.dart';
 import '../../data/models/booking.dart';
 
 class InvoiceDetailController extends GetxController {

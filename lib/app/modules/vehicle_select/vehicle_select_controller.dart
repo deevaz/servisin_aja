@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/app/core/utils/snackbar_util.dart';
+
 import 'package:get/get.dart';
+import 'package:servisin_aja/app/core/utils/snackbar_util.dart';
 import '../../data/models/vehicle.dart';
 import '../../data/repositories/vehicle_repository.dart';
 import '../../routes/app_routes.dart';
