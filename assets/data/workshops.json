@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ws1",
+    "name": "AHASS Honda Astra Motor Pusat",
+    "address": "Jl. Kramat Raya No. 104, Senen, Jakarta Pusat",
+    "distanceKm": 1.8,
+    "rating": 4.9,
+    "reviewCount": 1240,
+    "imageAsset": "assets/images/workshop_1.png",
+    "openHours": "08:00 - 17:00"
+  },
+  {
+    "id": "ws2",
+    "name": "AHASS Motorku Express South",
+    "address": "Jl. RS Fatmawati No. 22, Cilandak, Jakarta Selatan",
+    "distanceKm": 3.4,
+    "rating": 4.8,
+    "reviewCount": 890,
+    "imageAsset": "assets/images/workshop_2.png",
+    "openHours": "07:30 - 16:30"
+  },
+  {
+    "id": "ws3",
+    "name": "AHASS Daya Motor Kebon Jeruk",
+    "address": "Jl. Panjang No. 88, Kebon Jeruk, Jakarta Barat",
+    "distanceKm": 5.1,
+    "rating": 4.7,
+    "reviewCount": 650,
+    "imageAsset": "assets/images/workshop_3.png",
+    "openHours": "08:00 - 17:00"
+  },
+  {
+    "id": "ws4",
+    "name": "AHASS Bintang Motor Tebet",
+    "address": "Jl. Tebet Raya No. 45, Tebet, Jakarta Selatan",
+    "distanceKm": 2.3,
+    "rating": 4.9,
+    "reviewCount": 1520,
+    "imageAsset": "assets/images/workshop_4.png",
+    "openHours": "08:00 - 18:00"
+  }
+]

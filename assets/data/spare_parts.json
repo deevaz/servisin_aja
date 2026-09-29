@@ -1,0 +1,65 @@
+[
+  {
+    "id": "sp1",
+    "name": "Oli MPX2 Matic 0.8L",
+    "category": "Oli",
+    "price": 54000,
+    "optional": true
+  },
+  {
+    "id": "sp2",
+    "name": "Oli SPX2 Synthetic 0.8L",
+    "category": "Oli",
+    "price": 68000,
+    "optional": true
+  },
+  {
+    "id": "sp3",
+    "name": "Oli Gardan Scooter 120ml",
+    "category": "Oli",
+    "price": 18000,
+    "optional": true
+  },
+  {
+    "id": "sp4",
+    "name": "Kampas Rem Depan",
+    "category": "Sparepart",
+    "price": 65000,
+    "optional": true
+  },
+  {
+    "id": "sp5",
+    "name": "Kampas Rem Belakang",
+    "category": "Sparepart",
+    "price": 55000,
+    "optional": true
+  },
+  {
+    "id": "sp6",
+    "name": "Filter Udara Viscous Element",
+    "category": "Sparepart",
+    "price": 48000,
+    "optional": true
+  },
+  {
+    "id": "sp7",
+    "name": "Busi Spark Plug CPR9EA-9",
+    "category": "Sparepart",
+    "price": 30000,
+    "optional": true
+  },
+  {
+    "id": "sp8",
+    "name": "Roller Set & V-Belt CVT",
+    "category": "Sparepart",
+    "price": 185000,
+    "optional": true
+  },
+  {
+    "id": "sp9",
+    "name": "Aki Kering Maintenance Free GTZ6V",
+    "category": "Sparepart",
+    "price": 245000,
+    "optional": true
+  }
+]

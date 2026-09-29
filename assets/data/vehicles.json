@@ -1,0 +1,47 @@
+[
+  {
+    "id": "v1",
+    "name": "Honda BeAT Street",
+    "type": "Motor",
+    "brand": "Honda",
+    "model": "BeAT 110 CBS",
+    "plateNumber": "B 4829 SKS",
+    "imageAsset": "assets/images/beat.png"
+  },
+  {
+    "id": "v2",
+    "name": "Honda Vario 160",
+    "type": "Motor",
+    "brand": "Honda",
+    "model": "Vario 160 ABS",
+    "plateNumber": "B 3102 KJA",
+    "imageAsset": "assets/images/vario.png"
+  },
+  {
+    "id": "v3",
+    "name": "Honda PCX 160",
+    "type": "Motor",
+    "brand": "Honda",
+    "model": "PCX 160 e:HEV",
+    "plateNumber": "B 6699 RFD",
+    "imageAsset": "assets/images/pcx.png"
+  },
+  {
+    "id": "v4",
+    "name": "Honda Scoopy Prestige",
+    "type": "Motor",
+    "brand": "Honda",
+    "model": "Scoopy Smart Key",
+    "plateNumber": "B 1234 ABC",
+    "imageAsset": "assets/images/scoopy.png"
+  },
+  {
+    "id": "v5",
+    "name": "Honda CB150R StreetFire",
+    "type": "Motor",
+    "brand": "Honda",
+    "model": "CB150R Special Edition",
+    "plateNumber": "B 5512 TXZ",
+    "imageAsset": "assets/images/cb150r.png"
+  }
+]

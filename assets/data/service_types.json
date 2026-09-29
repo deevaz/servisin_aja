@@ -1,0 +1,34 @@
+[
+  {
+    "id": "st1",
+    "name": "Servis Ringan",
+    "description": "Pemeriksaan umum, pembersihan filter udara, setel rantai, cek rem & busi.",
+    "basePrice": 75000,
+    "estimatedMinutes": 45,
+    "icon": "build_outlined"
+  },
+  {
+    "id": "st2",
+    "name": "Servis Berkala",
+    "description": "Paket servis lengkap, ganti oli mesin, cek kelistrikan, ganti oli gardan, tune up.",
+    "basePrice": 150000,
+    "estimatedMinutes": 90,
+    "icon": "published_with_changes_outlined"
+  },
+  {
+    "id": "st3",
+    "name": "Perawatan & Perbaikan",
+    "description": "Perbaikan komponen spesifik, kuras minyak rem, servis CVT/injeksi, penanganan keluhan.",
+    "basePrice": 250000,
+    "estimatedMinutes": 120,
+    "icon": "home_repair_service_outlined"
+  },
+  {
+    "id": "st4",
+    "name": "Overhaul Mesin",
+    "description": "Bongkar total mesin, penggantian komponen aus, skir klep, pembersihan ruang bakar.",
+    "basePrice": 1200000,
+    "estimatedMinutes": 1440,
+    "icon": "engineering_outlined"
+  }
+]
