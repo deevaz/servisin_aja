@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
+import '../../core/utils/dialog_util.dart';
 import '../../data/models/vehicle.dart';
 import '../../data/models/service_type.dart';
 import '../../data/models/workshop.dart';
@@ -28,25 +30,34 @@ class HomeController extends GetxController {
   Future<void> loadDashboardData() async {
     isLoading.value = true;
     try {
-      final vehicles = await _vehicleRepo.getVehicles();
-      final services = await _serviceRepo.getServiceTypes();
-      final workshops = await _workshopRepo.getWorkshops();
+      final results = await Future.wait([
+        _vehicleRepo.getVehicles(),
+        _serviceRepo.getServiceTypes(),
+        _workshopRepo.getWorkshops(),
+      ]);
 
-      userVehicles.assignAll(vehicles);
-      serviceTypes.assignAll(services);
-      nearbyWorkshops.assignAll(workshops);
+      userVehicles.assignAll(results[0] as List<Vehicle>);
+      serviceTypes.assignAll(results[1] as List<ServiceType>);
+      nearbyWorkshops.assignAll(results[2] as List<Workshop>);
     } catch (e) {
-      print(e);
+      debugPrint('loadDashboardData error: $e');
     } finally {
       isLoading.value = false;
     }
   }
 
-  void onNavTap(int index) {
-    currentNavIndex.value = index;
-    if (index == 1) {
-      Get.toNamed(Routes.bookingHistory);
-      currentNavIndex.value = 0;
+  Future<void> onNavTap(int index) async {
+    switch (index) {
+      case 0:
+        currentNavIndex.value = 0;
+        break;
+      case 1:
+        await Get.toNamed(Routes.bookingHistory);
+        currentNavIndex.value = 0;
+        break;
+      case 2:
+        DialogUtil.showUnderDevelopment(featureName: 'Halaman Profil');
+        break;
     }
   }
 

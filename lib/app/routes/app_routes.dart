@@ -1,5 +1,6 @@
 abstract class Routes {
   Routes._();
+  static const main = _Paths.main;
   static const home = _Paths.home;
   static const vehicleSelect = _Paths.vehicleSelect;
   static const serviceConfig = _Paths.serviceConfig;
@@ -14,6 +15,7 @@ abstract class Routes {
 
 abstract class _Paths {
   _Paths._();
+  static const main = '/main';
   static const home = '/home';
   static const vehicleSelect = '/vehicle-select';
   static const serviceConfig = '/service-config';

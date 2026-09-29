@@ -20,12 +20,14 @@ import '../modules/invoice_detail/invoice_detail_binding.dart';
 import '../modules/invoice_detail/invoice_detail_view.dart';
 import '../modules/booking_history/booking_history_binding.dart';
 import '../modules/booking_history/booking_history_view.dart';
+import '../modules/main/main_binding.dart';
+import '../modules/main/main_view.dart';
 import 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  static const initial = Routes.home;
+  static const initial = Routes.main;
 
   static final routes = [
     GetPage(
@@ -77,6 +79,11 @@ class AppPages {
       name: Routes.bookingHistory,
       page: () => const BookingHistoryView(),
       binding: BookingHistoryBinding(),
+    ),
+    GetPage(
+      name: Routes.main,
+      page: () => const MainView(),
+      binding: MainBinding(),
     ),
   ];
 }

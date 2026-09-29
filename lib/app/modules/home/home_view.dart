@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/app/core/utils/dialog_util.dart';
 import 'package:get/get.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_spacing.dart';
@@ -7,83 +8,73 @@ import '../../core/widgets/primary_button.dart';
 import '../../core/widgets/section_header.dart';
 import '../../core/utils/formatters.dart';
 import 'home_controller.dart';
+import 'package:flutter/services.dart'; // tambahkan import ini
 
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.surface,
-      body: Obx(() {
-        if (controller.isLoading.value) {
-          return const Center(
-            child: CircularProgressIndicator(color: AppColors.primary),
-          );
-        }
+    final topPad = MediaQuery.of(context).padding.top;
 
-        return SafeArea(
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _buildHeader(),
-                const SizedBox(height: AppSpacing.lg),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: AppSpacing.screenHorizontalPadding,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _buildPromoBanner(),
-                      const SizedBox(height: AppSpacing.xxl),
-                      _buildServicesGrid(),
-                      const SizedBox(height: AppSpacing.xxl),
-                      _buildMyVehiclesQuickList(),
-                      const SizedBox(height: AppSpacing.xxl),
-                      _buildNearbyWorkshops(),
-                      const SizedBox(height: AppSpacing.xxxl),
-                    ],
-                  ),
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle.light.copyWith(
+        statusBarColor: Colors.transparent,
+      ),
+      child: Scaffold(
+        backgroundColor: AppColors.surface,
+        body: Obx(() {
+          if (controller.isLoading.value) {
+            return const Center(
+              child: CircularProgressIndicator(color: AppColors.primary),
+            );
+          }
+
+          return Stack(
+            children: [
+              SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _buildHeader(topPad),
+                    const SizedBox(height: AppSpacing.lg),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AppSpacing.screenHorizontalPadding,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          _buildPromoBanner(),
+                          const SizedBox(height: AppSpacing.xxl),
+                          _buildServicesGrid(),
+                          const SizedBox(height: AppSpacing.xxl),
+                          _buildMyVehiclesQuickList(),
+                          const SizedBox(height: AppSpacing.xxl),
+                          _buildNearbyWorkshops(),
+                          const SizedBox(height: AppSpacing.xxxl),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ),
-        );
-      }),
-      bottomNavigationBar: Obx(
-        () => BottomNavigationBar(
-          currentIndex: controller.currentNavIndex.value,
-          onTap: controller.onNavTap,
-          selectedItemColor: AppColors.primary,
-          unselectedItemColor: AppColors.textMuted,
-          showUnselectedLabels: true,
-          type: BottomNavigationBarType.fixed,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined),
-              activeIcon: Icon(Icons.home),
-              label: 'Beranda',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.history_outlined),
-              activeIcon: Icon(Icons.history),
-              label: 'Riwayat',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person_outline),
-              activeIcon: Icon(Icons.person),
-              label: 'Profil',
-            ),
-          ],
-        ),
+              ),
+              Positioned(
+                top: 0,
+                left: 0,
+                right: 0,
+                height: topPad,
+                child: const ColoredBox(color: AppColors.primary),
+              ),
+            ],
+          );
+        }),
       ),
     );
   }
 
-  Widget _buildHeader() {
+  Widget _buildHeader(double topPad) {
     return Container(
       width: double.infinity,
       decoration: const BoxDecoration(
@@ -97,9 +88,9 @@ class HomeView extends GetView<HomeController> {
           bottomRight: Radius.circular(24),
         ),
       ),
-      padding: const EdgeInsets.fromLTRB(
+      padding: EdgeInsets.fromLTRB(
         AppSpacing.screenHorizontalPadding,
-        AppSpacing.lg,
+        topPad + AppSpacing.lg,
         AppSpacing.screenHorizontalPadding,
         AppSpacing.xxl,
       ),
@@ -154,7 +145,9 @@ class HomeView extends GetView<HomeController> {
                     Icons.notifications_none,
                     color: Colors.white,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    DialogUtil.showUnderDevelopment();
+                  },
                 ),
               ),
             ],
@@ -258,6 +251,7 @@ class HomeView extends GetView<HomeController> {
         const SectionHeader(title: 'Layanan Servis Kami'),
         const SizedBox(height: AppSpacing.md),
         GridView.builder(
+          padding: EdgeInsets.zero,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -401,6 +395,7 @@ class HomeView extends GetView<HomeController> {
         const SectionHeader(title: 'Bengkel AHASS Terdekat'),
         const SizedBox(height: AppSpacing.md),
         ListView.builder(
+          padding: EdgeInsets.zero,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemCount: controller.nearbyWorkshops.length,
